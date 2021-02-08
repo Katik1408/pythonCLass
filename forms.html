@@ -10,26 +10,105 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/79d70c3269.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <form>
-     
-        <div class="container ">
-            <div class="card spacer">
+      <div class="container-fluid">
+        <div class="card spacer">
           <div class="card-body">
             <div class="row">
+              <div class="col-md-3">
+                <label for="txtUser" style="float: right">Username </label>
+              </div>
+              <div class="col-md-3">
+                <input type="text" id="txtUser" class="form-control" />
+              </div>
+            </div>
+            <div class="row rowSpacer">
               <div class="col-md-6">
-                <label for="txtUser"> Username </label>
+                <label for="emailid">EmailId</label>
               </div>
               <div class="col-md-6">
-                <input type="text" id="txtUser" class="form-control" />
+                <input type="email" class="form-control" id="emailid" />
+              </div>
+            </div>
+            <div class="row rowSpacer">
+              <div class="col-md-6">
+                <label for="pwd">Password</label>
+              </div>
+              <div class="col-md-6">
+                <input type="password" class="form-control" id="pwd" />
+              </div>
+            </div>
+            <div class="row rowSpacer">
+              <div class="col-md-6">
+                <label for="cpwd">Confirm Password</label>
+              </div>
+              <div class="col-md-6">
+                <input type="password" class="form-control" id="cpwd" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <input type="submit" class="btn btn-primary" value="Sign up" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <a href="https://google.com">
+                  <i class="fab fa-google" style="float: right; margin: 5px"></i
+                ></a>
+                <i class="fa fa-plus" style="float: right; margin: 5px"></i>
+                <i
+                  class="fa fa-trash"
+                  data-toggle="modal"
+                  data-target="#exampleModal"
+                  style="float: right; margin: 5px"
+                ></i>
               </div>
             </div>
           </div>
         </div>
       </div>
     </form>
+
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Are you Sure</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">This will permanently delete your item</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
