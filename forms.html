@@ -63,11 +63,17 @@
                 <a href="https://google.com">
                   <i class="fab fa-google" style="float: right; margin: 5px"></i
                 ></a>
-                <i class="fa fa-plus" style="float: right; margin: 5px"></i>
+
+                <i
+                  data-toggle="modal"
+                  data-target="#addModal"
+                  class="fa fa-plus"
+                  style="float: right; margin: 5px"
+                ></i>
                 <i
                   class="fa fa-trash"
                   data-toggle="modal"
-                  data-target="#exampleModal"
+                  data-target="#delelteModal"
                   style="float: right; margin: 5px"
                 ></i>
               </div>
@@ -77,9 +83,33 @@
       </div>
     </form>
 
+    <select>
+      <option>First</option>
+      <option>Second</option>
+      <option>Third</option>
+    </select>
+
+    <div class="dropdown">
+      <button
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Dropdown button
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </div>
+    <!-- Delete Modal-->
     <div
       class="modal fade"
-      id="exampleModal"
+      id="delelteModal"
       tabindex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
@@ -90,12 +120,18 @@
             <h5 class="modal-title" id="exampleModalLabel">Are you Sure</h5>
             <button
               type="button"
-              class="btn-close"
+              class=""
               data-dismiss="modal"
               aria-label="Close"
-            ></button>
+            >
+              &times;
+            </button>
           </div>
-          <div class="modal-body">This will permanently delete your item</div>
+          <div class="modal-body">
+            <p class="alert alert-danger">
+              This will permanently delete your item
+            </p>
+          </div>
           <div class="modal-footer">
             <button
               type="button"
@@ -105,6 +141,45 @@
               Close
             </button>
             <button type="button" class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Addition Modal -->
+
+    <div
+      class="modal fade"
+      id="addModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add new Item</h5>
+            <button
+              type="button"
+              class=""
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <input type="text" class="form-control" />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Add</button>
           </div>
         </div>
       </div>
