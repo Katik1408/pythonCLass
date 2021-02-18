@@ -15,11 +15,11 @@ let age = 24;
 let isActive = true;
 let date = null;
 
-console.log(typeof firstName);
-console.log(typeof lastName);
-console.log(typeof age);
-console.log(typeof isActive);
-console.log(typeof date);
+console.log(typeof firstName); //String
+console.log(typeof lastName); //Undefined
+console.log(typeof age); // Number
+console.log(typeof isActive); // boolean
+console.log(typeof date); //Object
 
 //const
 

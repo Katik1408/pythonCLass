@@ -147,9 +147,17 @@ for (let q = 0; q < arr1.length; q++) {
   console.log("Value of arr1 at position " + q + " is " + arr1[q]);
 }
 
-
-
-
+let num = 10;
+let result = 1;
+console.log("-------Factorial Logic---------");
+if (num === 0) {
+  console.log("Factorial of 0 is " + result);
+} else {
+  for (let f = 1; f <= num; f++) {
+    result = result * f;
+  }
+  console.log("Factorial of " + num + " is " + result);
+}
 
 // let obj = [{ name: "Karik" }, { name: "Rahul" }];
 // obj.forEach((e) => {
