@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="styles.css" />
-    <script src="app.js"></script>
+    <!-- <script src="app.js"></script> -->
     <script
       src="https://kit.fontawesome.com/79d70c3269.js"
       crossorigin="anonymous"
@@ -38,15 +38,26 @@
             >Home <span class="sr-only">(current)</span></a
           >
           <a class="nav-item nav-link" href="#">Features</a>
-          <a class="nav-item nav-link" href="#">Pricing</a>
+          <a class="nav-item nav-link" href="cart.html">Cart</a>
           <a class="nav-item nav-link disabled" href="#">Disabled</a>
         </div>
       </div>
     </nav>
 
-<h1>
-    Welcome user
-</h1>
+    <h1 id="greeting"></h1>
+
+    <div class="container">
+      <div class="card">
+        <div class="row">
+          <div class="col-md-6">
+            <strong>Username</strong> <span id="usrname"></span>
+          </div>
+          <div class="col-md-6">
+            <strong>Email id</strong> <span id="eid"></span>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -63,5 +74,20 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      let url = new URLSearchParams(window.location.search);
+      console.log(url);
+      let uname = url.get("username");
+      let emailid = url.get("email");
+      console.log(emailid);
+      console.log(uname);
+
+      document.getElementById("greeting").innerHTML = "Welcome " + uname;
+      document.getElementById("usrname").innerHTML = uname;
+      document.getElementById("eid").innerHTML = emailid;
+
+      sessionStorage.setItem("username", uname);
+    </script>
   </body>
 </html>

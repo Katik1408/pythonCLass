@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="google-signin-client_id"
+      content="989374370286-cbq50du3pbdd91e9df1n04vrfhfhu9jh.apps.googleusercontent.com"
+    />
     <title>Document</title>
     <link
       rel="stylesheet"
@@ -17,6 +21,8 @@
       src="https://kit.fontawesome.com/79d70c3269.js"
       crossorigin="anonymous"
     ></script>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -44,7 +50,7 @@
       </div>
     </nav>
 
-    <form  onsubmit="return validateForm()"  action="welcome.html" >
+    <form onsubmit="return validateForm()" action="welcome.html">
       <div class="container-fluid">
         <div class="card spacer">
           <div class="card-body">
@@ -53,10 +59,17 @@
                 <label for="txtUser">Username </label>
               </div>
               <div class="col-md-4">
-                <input name="username"  type="text" id="txtUser" class="form-control" onfocus="showInfo()" onkeypress="removeStyles()"  />
+                <input
+                  name="username"
+                  type="text"
+                  id="txtUser"
+                  class="form-control"
+                  onfocus="showInfo()"
+                  onkeypress="removeStyles()"
+                />
               </div>
               <div class="col-md-4">
-                <p id="errorUser" ></p>
+                <p id="errorUser"></p>
               </div>
             </div>
             <div class="row rowSpacer">
@@ -64,11 +77,16 @@
                 <label for="emailid">EmailId</label>
               </div>
               <div class="col-md-4">
-                <input type="email" name="email"  class="form-control" id="emailid" />
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  id="emailid"
+                />
               </div>
-              
+
               <div class="col-md-4">
-                <p id="errorEmail" ></p>
+                <p id="errorEmail"></p>
               </div>
             </div>
             <div class="row rowSpacer">
@@ -76,11 +94,16 @@
                 <label for="pwd">Password</label>
               </div>
               <div class="col-md-4">
-                <input type="password"  class="form-control" id="pwd" />
+                <input
+                  type="password"
+                  name="pwd"
+                  class="form-control"
+                  id="pwd"
+                />
               </div>
-              
+
               <div class="col-md-4">
-                <p id="errorpwd" ></p>
+                <p id="errorpwd"></p>
               </div>
             </div>
             <div class="row rowSpacer">
@@ -90,14 +113,25 @@
               <div class="col-md-4">
                 <input type="password" class="form-control" id="cpwd" />
               </div>
-              
+
               <div class="col-md-4">
-                <p id="errorCpwd" ></p>
+                <p id="errorCpwd"></p>
               </div>
             </div>
             <div class="row">
               <div class="col-md-12">
                 <input type="submit" class="btn btn-primary" value="Sign up" />
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                <div id="fb-root"></div>
+                <div
+                  class="fb-login-button"
+                  data-width=""
+                  data-size="large"
+                  data-button-type="continue_with"
+                  data-layout="default"
+                  data-auto-logout-link="false"
+                  data-use-continue-as="false"
+                ></div>
               </div>
             </div>
             <div class="row">
@@ -140,5 +174,46 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v10.0&appId=402499423569096&autoLogAppEvents=1"
+      nonce="twnSs8lQ"
+    ></script>
+    <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: "311040173703909",
+          cookie: true,
+          xfbml: true,
+          version: "1.0.0",
+        });
+
+        FB.AppEvents.logPageView();
+      };
+
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+          return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "facebook-jssdk");
+
+      FB.getLoginStatus(function (response) {
+        statusChangeCallback(response);
+      });
+
+      function checkLoginState() {
+        FB.getLoginStatus(function (response) {
+          statusChangeCallback(response);
+        });
+      }
+    </script>
   </body>
 </html>
