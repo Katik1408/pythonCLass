@@ -3,8 +3,73 @@
 <!-- 
 <div class="category"></div> -->
 
-
-
 <div category></div>
 
 <h1>Welcome</h1>
+
+<!--
+    Text Interpolation
+-->
+<div>
+  <p style="font-size: 32px">
+    {{ title }} <br />
+    {{ num }} <br />
+    {{ 4 * 587687 }}
+    <br />
+    {{ getData() }}
+  </p>
+</div>
+
+<!--
+Property Binding
+-->
+<input type="text" class="form-control" [placeholder]="placeholderData" />
+
+<!--
+    Event Binding
+-->
+<br />
+<button class="btn btn-primary" (click)="changeTitle()">Click</button>
+
+<!--
+    Two Way DataBinding
+    
+    ngModel
+
+    [(ngModel)] -> Banana in a box 
+-->
+
+<input type="text" [(ngModel)]="title" class="form-control" />
+{{ title }}
+<br />
+<!--
+
+    Structural Directive
+-->
+
+<div *ngIf="isActive; else elseblock">
+  <h1>User is Active</h1>
+</div>
+
+<ng-template #elseblock>
+  <h1>User is InActive</h1>
+</ng-template>
+
+<br />
+<hr />
+
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Place</th>
+  </tr>
+  <tr *ngFor="let student of students">
+    <td>{{ student.Name }}</td>
+    <td>{{ student.Age }}</td>
+    <td>{{ student.Place }}</td>
+  </tr>
+</table>
+
+<!-- 
+<button onclick="add()">Call</button> -->
