@@ -10,11 +10,24 @@ export class AppComponent {
   num: number = 1233;
 
   isActive: boolean = true;
-
+  isSpecial: boolean = true;
   placeholderData = 'Inside Placeholder';
 
   getData() {
     return 'Some value';
+  }
+
+  getColor(place) {
+    switch (place) {
+      case 'Bangalore':
+        return '#55efc4';
+      case 'Noida':
+        return '#0984e3';
+      case 'Delhi':
+        return '#fab1a0';
+      default:
+        return '#636e72';
+    }
   }
 
   changeTitle() {
@@ -35,6 +48,11 @@ export class AppComponent {
     {
       Name: 'Rohan',
       Age: 29,
+      Place: 'Delhi',
+    },
+    {
+      Name: 'Harsh',
+      Age: 31,
       Place: 'Delhi',
     },
     {

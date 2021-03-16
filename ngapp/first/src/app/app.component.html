@@ -1,16 +1,19 @@
 <app-navbar></app-navbar>
 
+<router-outlet></router-outlet>
+
+
 <!-- 
 <div class="category"></div> -->
 
-<div category></div>
+<!-- <div category></div>
 
-<h1>Welcome</h1>
+<h1>Welcome</h1> -->
 
 <!--
     Text Interpolation
 -->
-<div>
+<!-- <div>
   <p style="font-size: 32px">
     {{ title }} <br />
     {{ num }} <br />
@@ -18,18 +21,18 @@
     <br />
     {{ getData() }}
   </p>
-</div>
+</div> -->
 
 <!--
 Property Binding
 -->
-<input type="text" class="form-control" [placeholder]="placeholderData" />
+<!-- <input type="text" class="form-control" [placeholder]="placeholderData" /> -->
 
 <!--
     Event Binding
 -->
-<br />
-<button class="btn btn-primary" (click)="changeTitle()">Click</button>
+<!-- <br />
+<button class="btn btn-primary" (click)="changeTitle()">Click</button> -->
 
 <!--
     Two Way DataBinding
@@ -39,14 +42,14 @@ Property Binding
     [(ngModel)] -> Banana in a box 
 -->
 
-<input type="text" [(ngModel)]="title" class="form-control" />
+<!-- <input type="text" [(ngModel)]="title" class="form-control" />
 {{ title }}
-<br />
+<br /> -->
 <!--
 
     Structural Directive
 -->
-
+<!-- 
 <div *ngIf="isActive; else elseblock">
   <h1>User is Active</h1>
 </div>
@@ -64,12 +67,29 @@ Property Binding
     <th>Age</th>
     <th>Place</th>
   </tr>
-  <tr *ngFor="let student of students">
+  <tr
+    *ngFor="let student of students"
+    [ngStyle]="{ 'background-color': getColor(student.Place) }"
+  >
     <td>{{ student.Name }}</td>
     <td>{{ student.Age }}</td>
     <td>{{ student.Place }}</td>
   </tr>
-</table>
+</table> -->
 
+<!--
+  Attribute Directive
+-->
+<!-- <div [ngClass]="isSpecial ? 'special' : 'notSoSpecial'">
+  <p>This is a paragraph</p>
+</div>
+
+<div [ngStyle]="{ 'background-color': 'blue' }">
+  <p>This is another paragraph</p>
+</div>
+<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+
+<button mat-button color="primary">Primary</button>
+<button mat-button color="accent">Accent</button> -->
 <!-- 
 <button onclick="add()">Call</button> -->
